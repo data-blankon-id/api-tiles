@@ -1,6 +1,6 @@
 {
   "name": "data.blankon.id-tiles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "blankon data-id",
   "main": "index.js",
   "scripts": {
