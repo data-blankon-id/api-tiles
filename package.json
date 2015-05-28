@@ -1,0 +1,21 @@
+{
+  "name": "data.blankon.id-tiles",
+  "version": "0.0.1",
+  "description": "blankon data-id",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "make test"
+  },
+  "keywords": [
+    "blankon",
+    "data",
+    "data-id"
+  ],
+  "author": "Mohammad Anwari <mdamt@mdamt.net>",
+  "license": "MIT",
+  "dependencies": {
+    "hyperquest": "^1.2.0",
+    "lout": "^6.2.2"
+  }
+}
