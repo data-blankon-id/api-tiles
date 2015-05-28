@@ -1,4 +1,5 @@
 var request = require("hyperquest");
+var joi = require("joi")
 var fs = require("fs");
 
 var ROOT_URL = "tile.openstreetmap.org"; 
@@ -56,7 +57,22 @@ Tiles.prototype.registerEndPoints = function() {
           res.file(r);
         });
       },
-      query: self.query
+      description: "Returns a PNG tile on specified coordinates",
+      tags: ["api"],
+      notes: "Tiles are provided by OpenStreetMap project. " +
+        "We can use three map servers: a, b, and c. " +
+        "The zoom parameter is an integer between 0 (zoomed out) and 19 (zoomed in). 19 is normally the maximum, but some tile servers might go beyond that." +
+        "X goes from 0 (left edge is 180 °W) to 2^zoom − 1 (right edge is 180 °E). " +
+        "Y goes from 0 (top edge is 85.0511 °N) to 2^zoom − 1 (bottom edge is 85.0511 °S) in a Mercator projection."
+      ,
+      validate: {
+        query: {
+            s: joi.string().required().description("Map server name"),
+            z: joi.number().required().description("Zoom level"),
+            x: joi.number().required().description("X tile coordinates"),
+            y: joi.number().required().description("Y tile coordinates"),
+        }
+      },
     }
   });
 }
