@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "hyperquest": "^1.2.0",
+    "joi": "^6.4.3",
     "lout": "^6.2.2"
   }
 }
